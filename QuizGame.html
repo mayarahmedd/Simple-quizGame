@@ -1,0 +1,67 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="QuizGame.css">
+    <title>Quize Game</title>
+</head>
+<body>
+    <h2 class="title">Quiz Game</h2>
+    <div class="quizContainer" id="quiz">
+        
+        <h3 class="quest">Quessions Here</h3>
+        <ul>
+            <li class="li-style"> 
+                <input type="radio" id="a" name="answer"  class="answer" />
+                <label class="answers" id="option1" for="a">
+
+                    <input type="radio" id="a" name="answer"  class="answer" />
+                </label>
+            </li>
+            <li class="li-style">
+                <input  type="radio" id="b" name="answer" class="answer"/>
+                <label class="answers" id="option2" for="b"></label>
+            </li>
+            <li class="li-style">
+                <input type="radio" id="c" name="answer" class="answer"/>
+                <label class="answers" id="option3" for="c"></label>
+            </li>
+            <li class="li-style">
+                <input type="radio" id="d" name="answer" class="answer"/>
+                <label class="answers" id="option4" for="d"></label>
+            </li>
+           
+        </ul>
+        <p id="result"></p>
+        <div class="btn">
+            <button  class="bn30" id="btn-prev">Previous</button>
+            <button  class="bn30" id="btn-submit">Submit</button>
+            <button class="bn30" id="btn-next">Next</button>
+
+        </div>
+        
+        <div id="results">
+            <p  class ='score'id="score"></p>
+            <button class="bn31" id="reset-button">Reset</button>
+          </div>
+        
+        
+            <!-- <button id="btn-reset" style="display: none;">Reset</button> -->
+        
+    </div>
+<script src="QuizGame.js"></script>
+</body>
+</html>

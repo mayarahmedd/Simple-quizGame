@@ -1,0 +1,198 @@
+let questData = [
+    {
+      question: "What does   HTML stands for ?",
+      a: "Hyper Text Markup Language ",
+      b: "Hypo Text Markup Language",
+      c: "Hard Test Marking Language",
+      d: "High Text Marking Language",
+      correct: "a",
+    },
+    {
+      question: "What does CSS stands for ?",
+      a: "Computer Style Sheet ",
+      b: "Cascading Shading Sheet",
+      c: "Cascading Style Sheet",
+      d: "Computer Style Sheet",
+      correct: "c",
+    },
+    {
+      question: "What does  JSON stands for ?",
+      a: "Java Object Notation",
+      b: "JavaScript on Nation",
+      c: "All of the above",
+      d: "JavaScript Object Notation",
+      correct: "d",
+    },
+    {
+      question: "Is the body part of the html tag ",
+      a: "NO ",
+      b: "YES",
+      c: "Cannot tell",
+      d: "No idea",
+      correct: "b",
+    },
+  
+];
+
+
+const grabId = (idName) => {
+  const ElementId = document.getElementById(idName);
+  if (ElementId) return ElementId;
+  throw new Error(`cannot find the id ${idName}`);
+};
+const option1 = grabId("option1");
+const option2 = grabId("option2");
+const option3 = grabId("option3");
+const option4 = grabId("option4");
+let nextBtn = grabId("btn-next");
+let result = document.getElementById("result");
+let prevBtn = grabId("btn-prev");
+let submitBtn = grabId("btn-submit");
+const quiz = grabId("quiz");
+const scoreElement = document.querySelector('#score');
+const resetButton = document.querySelector('#reset-button');
+const question = document.querySelector("h3");
+const answers = document.querySelectorAll(".answer");
+// const resetButton = document.querySelector('btn-reset');
+
+
+
+let currentQuize = 0;
+let score = 0;
+let lock =0;
+
+loadQuize();
+function loadQuize() {
+  unCheckAnswer();
+  let nextOption = questData[currentQuize];
+  question.innerText = nextOption.question;
+  option1.innerText = nextOption.a;
+  option2.innerText = nextOption.b;
+  option3.innerText = nextOption.c;
+  option4.innerText = nextOption.d;
+  result.textContent = "";
+  result.classList.remove("correct", "incorrect");
+ 
+  nextBtn.addEventListener("click", nextQuestion);
+  submitBtn.addEventListener("click", TorF);
+  
+  prevBtn.addEventListener("click", PreviousQuestion);
+  resetButton.addEventListener('click', () => {
+    window.location.href = 'QuizApp.html';
+  });
+}
+
+
+function TorF(){
+  const ans = getValue();
+  
+  if(ans && lock !=1){
+    if (ans === questData[currentQuize].correct) {
+        result.classList.add("correct");
+      result.textContent = "Correct!";
+   
+  }else {
+    result.classList.add("incorrect");
+    result.textContent ="incorrect" ;
+  }
+lock=1;
+
+}
+
+}
+
+
+
+function nextQuestion() {
+  const answer = getValue();
+  if (answer) {
+    if (answer === questData[currentQuize].correct) {
+      // result.classList.add("correct");
+      // result.textContent = "Correct!";
+        //knowAnswer()
+      //answer.classList.add("correct");
+      score++;
+    }else{
+
+      //result.classList.add("incorrect");
+    //  answer.classList.add("incorrect");
+     // result.textContent = "Incorrect!";
+    }
+
+    currentQuize++;
+    if (currentQuize < questData.length) {
+      lock = 0;
+      loadQuize();
+    } else if (score === questData.length) {
+      //quiz.innerHTML = `<h1> Congratulations 👏👏 <br/>You scored ${score}/${questData.length}</h1>`;
+      scoreElement.textContent = `Congratulations 👏👏 Your score: ${score} /${questData.length}`;
+   
+      
+      // showResetButton()
+    } else {
+      // quiz.innerHTML = `<h1> You scored ${score}/${questData.length}`;
+      //  showResetButton()
+
+       scoreElement.textContent = `Your score: ${score} /${questData.length}`;
+       resetButton.addEventListener('click', () => {
+        window.location.href = 'QuizApp.html';
+      });
+    }
+  }
+}
+
+function PreviousQuestion() {
+  if (currentQuize.valueOf() === 0) {
+    alert("Can't go back anymore");
+  } else if (currentQuize === questData.length){
+    alert("please press reset to return back");
+
+  }
+  else {
+    currentQuize--;
+    loadQuize();
+  }
+}
+
+function getValue() {
+  let value = undefined;
+  answers.forEach((answer) => {
+    if (answer.checked ) {
+      value = answer.id;
+    }
+  });
+  return value;
+}
+
+function unCheckAnswer() {
+  answers.forEach((answer) => {
+    answer.checked = false;
+  });
+}
+
+
+// function showResetButton() {
+//   // Create the reset button element
+//   const resetButton = document.createElement('button');
+//   resetButton.textContent = 'Reset';
+
+
+//   //quiz.innerHTML += resetButton.outerHTML;
+
+//   // Add an event listener to the reset button
+//   resetButton.addEventListener('click', () => {
+//     // window.location.href = 'QuizApp.html';
+//     //alert("hhhhhhhhhhh");
+//     // Navigate to another page when the reset button is clicked
+//     // currentQuize = 0;
+//     // score = 0;
+//     // loadQuize();
+//   });
+//   quiz.innerHTML.appendChild(resetButton.outerHTML)
+
+//   // Select the container element
+
+//   // Append the reset button to the container using innerHTML
+
+// }
+

@@ -1,0 +1,223 @@
+html {
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background: blueviolet;
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient(to left top, blue, rgb(205, 137, 190));
+  background: -moz-linear-gradient(to left top, blue, rgb(205, 137, 190));
+  background: -ms-linear-gradient(to left top, blue, rgb(205, 137, 190));
+  background: -o-linear-gradient(to left top, blue, rgb(205, 137, 190));
+  background: linear-gradient(to left top, blue, rgb(205, 137, 190));
+}
+
+
+
+.quizContainer {
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 630px;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  width: 400px;
+  height: 450px;
+  border-radius: 50px;
+
+}
+
+.title {
+  margin-left: -40px;
+  margin-top: 80px;
+  font-size: 60px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-decoration: underline;
+
+
+}
+
+
+
+.btn {
+
+  margin-top: 60px;
+  display: flex;
+}
+
+.bn30 {
+  border: 5em;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  margin-right: 25px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  padding: 0.7em 2em;
+  border-radius: 65px;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: rgb(8, 7, 7);
+
+}
+
+.bn30 .text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+
+.bn30:after {
+  content: "";
+  border-radius: 18px;
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: white;
+}
+
+.bn30:hover {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+
+.bn30:hover .text {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+
+.quest {
+
+  font-size: 27px;
+  font-weight: 1000;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+.answers {
+
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+
+
+}
+
+.answers:hover {
+  color: rgb(116, 78, 152);
+
+}
+
+.li-style {
+
+  padding-bottom: 5px;
+
+}
+
+
+
+
+.bn31 {
+  border: 5em;
+  cursor: pointer;
+  outline: none;
+  align-items: center;
+  margin-left: 160px;
+  margin-top:40px;
+  font-size: 15px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  padding: 0.6em 2em;
+  border-radius: 65px;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: rgb(8, 7, 7);
+}
+
+.bn31 .text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+
+.bn31:after {
+  content: "";
+  border-radius: 18px;
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: white;
+}
+
+.bn31:hover {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+
+.bn31:hover .text {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+
+.quest {
+
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+
+
+.correct {
+  color: green;
+  font-family: 'Poppins', sans-serif;
+
+
+}
+
+.incorrect {
+  color: red;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+ul {
+
+  list-style-type: upper-latin;
+
+}
+
+.score {
+
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
